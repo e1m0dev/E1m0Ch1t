@@ -126,26 +126,23 @@ public class PlayerService implements PlayerServiceAPI {
         Map<String, AMessageState> groups = plugin.getBroadcastList();
         if (groups.isEmpty()) return;
 
-        Map<String, Long> lastSend = new HashMap<>();
+        List<AMessageState> groupList = new ArrayList<>(groups.values());
+
+        final int[] groupIndex = {0};
+
         Bukkit.getScheduler().runTaskTimer(plugin, () -> {
-            long now = System.currentTimeMillis();
 
-            for (Map.Entry<String, AMessageState> entry : groups.entrySet()) {
-                String id = entry.getKey();
-                AMessageState state = entry.getValue();
+            if (groupList.isEmpty()) return;
 
-                long cooldownMs = state.cooldown() * 50L;
-                long last = lastSend.getOrDefault(id, 0L);
+            AMessageState state = groupList.get(groupIndex[0]);
 
-                if (now - last < cooldownMs) continue;
-
-                for (String msg : state.messagesList()) {
-                    Bukkit.broadcast(Component.text(msg));
-                }
-
-                lastSend.put(id, now);
+            for (String msg : state.messagesList()) {
+                Bukkit.broadcast(eColor.parse(msg));
             }
-        }, 0L, 20L);
+
+            groupIndex[0] = (groupIndex[0] + 1) % groupList.size();
+
+        }, 0L, 20L * config.getLong("AutoMessage.cooldown", 10));
     }
 
     public void startGlobalCooldownTask() {

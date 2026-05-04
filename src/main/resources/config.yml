@@ -42,24 +42,22 @@ Effects:
     sound: "ENTITY_PLAYER_LEVELUP"
 
 AutoMessage:
-  enable: false
+  enable: true
+  cooldown: 10
   Broadcast:
-    cooldown: 300
     message:
     - "--"
-    - "Если перед ник неймом поставить @Dev то получатель получит извещение о упоминании!"
+    - "&c! | &7Если перед ник неймом поставить @Dev то получатель получит извещение о упоминании!"
     - "--"
-  Elmo:
-    cooldown: 300
-    message:
-      - "--"
-      - "Наведите на сообщение игрока чтобы посмотреть его статистику!"
-      - "--"
   Dev:
-    cooldown: 300
     message:
       - "--"
-      - "Developer Message"
+      - "&7&#FD9B1AН&#FC9A1Bа&#FB991Cв&#F9971Dе&#F8961Eд&#F7951Fи&#F69420т&#F59321е &#F29023н&#F18F24а &#EF8D26с&#EE8C27о&#EC8A28о&#EB8929б&#EA8829щ&#E9872Aе&#E8862Bн&#E7852Cи&#E5832Dе &#E3812Fи&#E28030г&#E17F31р&#DF7D32о&#DE7C33к&#DD7B34а &#DB7936ч&#DA7837т&#D87638о&#D77539б&#D6743Aы &#D4723Cп&#D2703Dо&#D16F3Eс&#D06E3Fм&#CF6D40о&#CE6C41т&#CC6A42р&#CB6943е&#CA6844т&#C96745ь &#C76546е&#C56347г&#C46248о &#C2604Aс&#C15F4Bт&#BF5D4Cа&#BE5C4Dт&#BD5B4Eи&#BC5A4Fс&#BB5950т&#BA5851и&#B85652к&#B75553у&#B65454!"
+      - "--"
+  Elmo:
+    message:
+      - "--"
+      - "<gradient:#FD1AEE:#8154B6>E1m0dev</gradient>"
       - "--"
 
 Chats:
