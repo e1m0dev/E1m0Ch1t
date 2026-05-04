@@ -1,0 +1,93 @@
+Settings:
+  chatFormat: "%color%chatPrefix%nick %donate -> %message"
+  messageHover:
+    - "%player_name%"
+    - "%player_exp%"
+
+Database:
+  log: true # Будут ли логироватся сообщения?
+  type: postgresql
+  host: 217.171.146.202
+  port: 5432
+  name: server_prod
+  user: elmo
+  pass: ElmoDev
+
+Permissions:
+  bypassAdd: "e1ch.admin"
+  bypassWord: "e1ch.admin"
+
+AntiAdd:
+  enable: true
+  BlockList: # | Если, что-то из этого списка будет в сообщении игрока - сообщение не будет отправлено.
+    - "https"
+    - ".com"
+    - ".ru"
+
+AntiWords:
+  enable: true
+  BlockList:
+    - "E1m0" # Например: Ник основателя сервера и администрации, чтобы не было упоминаний о нем для сокрытия высшей администрации.
+
+Messages:
+  Errors:
+    cooldownDown: "У вас осталось еще %sec до конца задержки!"
+    notAFindChat: "Не найдено не одного чата"
+    blockWord: "Это слово - запрещено!"
+    blockAdd: "Подозрения на рекламу!"
+
+Effects:
+  Mention:
+    message: "Вас упомянули в чате! %sender!"
+    sound: "ENTITY_PLAYER_LEVELUP"
+
+AutoMessage:
+  enable: false
+  Broadcast:
+    cooldown: 300
+    message:
+    - "--"
+    - "Если перед ник неймом поставить @Dev то получатель получит извещение о упоминании!"
+    - "--"
+  Elmo:
+    cooldown: 300
+    message:
+      - "--"
+      - "Наведите на сообщение игрока чтобы посмотреть его статистику!"
+      - "--"
+  Dev:
+    cooldown: 300
+    message:
+      - "--"
+      - "Developer Message"
+      - "--"
+
+Chats:
+  Global:
+    permission: "e1ch.player"
+    cooldown: 3 # Сколько еще нельзя будет писать в этот чат?
+    prefix: "G | "
+    radius: 0
+    color: "&7"
+    tag: "!"
+  Local:
+    permission: "e1ch.player"
+    cooldown: 3
+    prefix: "L | "
+    radius: 7
+    color: "&7"
+    tag: ""
+  Dev:
+    permission: "e1ch.player"
+    cooldown: 0
+    prefix: "D | "
+    radius: 0
+    color: ""
+    tag: "$"
+  Admin:
+    permission: "e1ch.adm"
+    cooldown: 5
+    prefix: "Admin | "
+    radius: 0
+    color: "&c"
+    tag: "*"

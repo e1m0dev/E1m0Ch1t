@@ -1,0 +1,10 @@
+name: E1m0Ch1t
+version: '1.0-DEV'
+main: tvgirl.elmodev.E1m0Ch1t
+api-version: '1.20'
+prefix: ECh1t
+load: STARTUP
+authors: [ E1m0 ]
+description: Special GreenWeltRP Chat Plugin
+depend:
+  - "PlaceholderAPI"
